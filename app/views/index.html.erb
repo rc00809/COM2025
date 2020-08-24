@@ -1,0 +1,50 @@
+<section class="section">
+  <div class="has-text-centered box">
+    <h1 class="title">price</h1>
+    <h2 class="subtitle">Choose the best plan that works for you.</h2>
+    <div class="price-table">
+      <div class="price-plan is-warning">
+        <div class="plan-header">Starter</div>
+        <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>5</span>/month</div>
+        <div class="plan-items">
+          <div class="plan-item">5 Downloads</div>
+        </div>
+        <div class="plan-footer">
+          <% if signed_in? %>
+            <%= link_to 'Subscribe', new_subscription_path(plan: "starter", plan_id: Rails.application.credentials.starter), class:"button is-fullwidth" %>
+          <% else %>
+            <%= link_to 'Subscribe', new_user_registration_path, class: 'button is-fullwidth' %>
+         <% end %>
+        </div>
+      </div>
+      <div class="price-plan is-link is-active">
+        <div class="plan-header">Medium</div>
+        <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>10</span>/month</div>
+        <div class="plan-items">
+          <div class="plan-item">10 Downloads</div>
+        </div>
+        <div class="plan-footer">
+           <% if signed_in? %>
+            <%= link_to 'Subscribe', new_subscription_path(plan: "Medium", plan_id: Rails.application.credentials.Medium), class:"button is-fullwidth" %>
+          <% else %>
+            <%= link_to 'Subscribe', new_user_registration_path, class: 'button is-fullwidth' %>
+         <% end %>
+        </div>
+      </div>
+      <div class="price-plan is-danger">
+        <div class="plan-header">Big Brain</div>
+        <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>30</span>/month</div>
+        <div class="plan-items">
+          <div class="plan-item">30 Downloads</div>
+        </div>
+        <div class="plan-footer">
+         <% if signed_in? %>
+            <%= link_to 'Subscribe', new_subscription_path(plan: "Big Brain", plan_id: Rails.application.credentials.Big Brain), class:"button is-fullwidth" %>
+          <% else %>
+            <%= link_to 'Subscribe', new_user_registration_path, class: 'button is-fullwidth' %>
+         <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
